@@ -1,22 +1,43 @@
-CC = gcc
-CFLAGS = -Wall -g
+# Makefile by gabriel-dp!
 
-all: kitboom
+# Define o compilador C
+CC := gcc
 
-kitboom: main.o input.o logic.o timer.o
-	$(CC) $(CFLAGS) -o kitboom main.o input.o logic.o timer.o
+# Nome do arquivo final
+BINARY := kitboom
 
-main.o: main.c config.h
-	$(CC) $(CFLAGS) -c main.c
+# Estrutura de diretórios do código
+BINDIR := .
+BUILDDIR := build
+INCDIR := include
+SRCDIR := src
 
-input.o: input.c config.h
-	$(CC) $(CFLAGS) -c input.c
+# Flags do compilador
+CFLAGS := -Wall -I $(INCDIR)
 
-logic.o: logic.c config.h
-	$(CC) $(CFLAGS) -c logic.c
+# Flags do linker
+LDFLAGS := 
 
-timer.o: timer.c config.h
-	$(CC) $(CFLAGS) -c timer.c
+# Nomes dos arquivos .o
+NAMES := $(notdir $(basename $(wildcard $(SRCDIR)/*.c)))
+OBJECTS := $(patsubst %,$(BUILDDIR)/%.o,$(NAMES))
 
+# Regra para compilar e gerar o arquivo binário final
+all: $(BINDIR)/$(BINARY)
+
+$(BINDIR)/$(BINARY): $(OBJECTS)
+	@ if [ ! -d $(BINDIR) ]; then mkdir -p $(BINDIR); fi
+	$(CC) -o $@ $(OBJECTS) $(LDFLAGS)
+
+# Regra para compilar os arquivos de objeto
+$(BUILDDIR)/%.o: $(SRCDIR)/%.c | $(BUILDDIR)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Cria o diretório build se ele não existir
+$(BUILDDIR):
+	@ mkdir -p $(BUILDDIR)
+
+# Limpa os diretórios BIN e BUILD
+.PHONY: clean
 clean:
-	rm -f *.o kitboom
+	rm -rf $(BUILDDIR) $(BINDIR)/$(BINARY)

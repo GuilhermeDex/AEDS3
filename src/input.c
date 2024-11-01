@@ -26,7 +26,6 @@ void processar_entrada(int argc, char *argv[], char **kit_file, char **config_fi
         exit(EXIT_FAILURE);
     }
 
-    printf("Arquivos fornecidos: Kit - %s, Configuracao - %s\n", *kit_file, *config_file);
 }
 
 void ler_kit(const char *filename, KitExplosivo **kit, int *numero_bomba) {

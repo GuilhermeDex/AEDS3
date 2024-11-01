@@ -9,12 +9,12 @@ int main(int argc, char *argv[]) {
     Bomba *config = NULL;
     int tamanhokit, tamanhoconfig;
 
+    start_timer();
     processar_entrada(argc, argv, &kit_file, &config_file);
 
     ler_kit(kit_file, &kit, &tamanhokit);
     ler_config(config_file, &config, &tamanhoconfig);
     
-    start_timer();
 
     verificar_correspondencia(kit, tamanhokit, config, tamanhoconfig);
     validar_configuracao(config, tamanhoconfig);

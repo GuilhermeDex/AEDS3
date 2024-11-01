@@ -21,6 +21,6 @@ void print_timer() {
     double elapsed = seconds + microseconds * 1e-6;
 
     printf("Tempo total: %.3f segundos\n", elapsed);
-    printf("Tempo de CPU (usuário): %ld.%06ld segundos\n", usage.ru_utime.tv_sec, usage.ru_utime.tv_usec);
+    printf("Tempo de CPU (usuario): %ld.%06ld segundos\n", usage.ru_utime.tv_sec, usage.ru_utime.tv_usec);
     printf("Tempo de CPU (sistema): %ld.%06ld segundos\n", usage.ru_stime.tv_sec, usage.ru_stime.tv_usec);
 }

@@ -1,0 +1,50 @@
+Configuração válida
+ramon@Ramon:/mnt/d/UFSJ/PAA/Trabalho Prático 1/AEDS3$ ./kitboom -k kit_file.txt -c config_file.txt
+Kit lido com sucesso! Numero de explosivos no kit: 16
+Configuracao lida com sucesso! Numero de explosivos configurados: 16
+Area total ocupada: 36 
+Configuracao valida!
+Tempo total: 0.004 segundos
+Tempo de CPU (usuario): 0.000965 segundos
+Tempo de CPU (sistema): 0.000000 segundos
+
+Erro de correspondência:
+ramon@Ramon:/mnt/d/UFSJ/PAA/Trabalho Prático 1/AEDS3$ ./kitboom -k kit_file1.txt -c config_file1.txt       
+Kit lido com sucesso! Numero de explosivos no kit: 30
+Configuracao lida com sucesso! Numero de explosivos configurados: 16
+Erro: explosivo 2Vd na configuracao nao existe no kit!
+Erro: A configuracao nao corresponde ao kit!
+Tempo total: 0.004 segundos
+Tempo de CPU (usuario): 0.000944 segundos
+Tempo de CPU (sistema): 0.000000 segundos
+Erro: configuracao invalida
+
+Configuração inválida:
+ramon@Ramon:/mnt/d/UFSJ/PAA/Trabalho Prático 1/AEDS3$ ./kitboom -k kit_file2.txt -c config_file2.txt       
+Kit lido com sucesso! Numero de explosivos no kit: 6
+Configuracao lida com sucesso! Numero de explosivos configurados: 6
+Explosivos adjacentes de mesma cor: 3Az e 3Az
+Configuracao invalida!
+Tempo total: 0.004 segundos
+Tempo de CPU (usuario): 0.000000 segundos
+Tempo de CPU (sistema): 0.001010 segundos
+
+Configuração inválida:
+ramon@Ramon:/mnt/d/UFSJ/PAA/Trabalho Prático 1/AEDS3$ ./kitboom -k kit_file3.txt -c config_file3.txt       
+Kit lido com sucesso! Numero de explosivos no kit: 16
+Configuracao lida com sucesso! Numero de explosivos configurados: 16
+Explosivos adjacentes de mesma cor: 3Az e 1Az
+Configuracao invalida!
+Tempo total: 0.004 segundos
+Tempo de CPU (usuario): 0.000972 segundos
+Tempo de CPU (sistema): 0.000000 segundos
+
+Configuração válida:
+ramon@Ramon:/mnt/d/UFSJ/PAA/Trabalho Prático 1/AEDS3$ ./kitboom -k kit_file4.txt -c config_file4.txt       
+Kit lido com sucesso! Numero de explosivos no kit: 16
+Configuracao lida com sucesso! Numero de explosivos configurados: 16
+Area total ocupada: 36
+Configuracao valida!
+Tempo total: 0.004 segundos
+Tempo de CPU (usuario): 0.000994 segundos
+Tempo de CPU (sistema): 0.000000 segundos

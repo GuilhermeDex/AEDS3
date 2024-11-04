@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include "config.h"
+
+#include "../include/logic.h"
+#include "../include/input.h"
 
 void processar_entrada(int argc, char *argv[], char **kit_file, char **config_file) {
     int opt;

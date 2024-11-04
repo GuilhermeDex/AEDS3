@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <sys/time.h>
 #include <sys/resource.h>
-#include "config.h"
+
+#include "../include/timer.h"
 
 struct timeval start_time, end_time;
 struct rusage usage;

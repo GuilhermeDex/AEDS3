@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "config.h"
+
+#include "../include/logic.h"
+#include "../include/input.h"
+#include "../include/timer.h"
 
 int main(int argc, char *argv[]) {
     char *kit_file = NULL;

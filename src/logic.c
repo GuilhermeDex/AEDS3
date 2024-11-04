@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "config.h"
+
+#include "../include/logic.h"
+#include "../include/timer.h"
 
 int adjacencia(Bomba b1, Bomba b2) {
     if (b1.x_inicial == b2.x_inicial) {
@@ -99,8 +101,6 @@ int verificar_correspondencia(KitExplosivo *kit, int num_kit, Bomba *config, int
     // comparando para ver se a quantidade de explosivos do kit esta de acordo com a quantidade da configuracao
     for (int j = 0; j < num_kit; j++) {
         if (quantidade_explosivos[j] != kit[j].quantidade) {
-            printf("Erro: A quantidade de %d%s esta incorreta. No kit: %d, na configuracao: %d\n",
-                   kit[j].tam, kit[j].cor, kit[j].quantidade, quantidade_explosivos[j]);
             free(quantidade_explosivos);
             stop_timer();
             print_timer();
